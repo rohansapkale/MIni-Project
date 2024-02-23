@@ -2,14 +2,14 @@
 include 'header.php';
 extract($_POST);
 extract($_GET);
-echo $email;
-$inner_query="select s.*
+
+$inner_query="select DISTINCT(s.start)
 from slots s 
  where s.slot_name not  in(select s.slot_name
 from appointment_request a 
 join slots s 
 on a.start_time=s.start
-where (a.end_time=s.end) and date='$date') ";
+where (a.end_time=s.end) and date='$date')";
 $inner_query_res=mysqli_query($connect,$inner_query);
 ?>
 
@@ -51,9 +51,10 @@ $inner_query_res=mysqli_query($connect,$inner_query);
                   <div class="mb-3">
                       <label class="form-label text-dark" >Start Time:</label>
                       <select  name="start_time" >
+                      
                         <?php
                             while($row=mysqli_fetch_assoc($inner_query_res)){
-                                echo "<input value='".$row['slot_name']." '/><br>";
+                                echo "<option value='".$row['start']."'>".$row['start']."</option>";
                             }
                         
                         ?>

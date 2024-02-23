@@ -12,7 +12,7 @@ include 'header.php';
 									<h1>Welcome Admin <span>Visitor Management</span> Services That You Can <span>Trust!</span></h1>									
 									<div class="button">
 										<a href="appointment.php" class="btn">Get Appointment</a>
-										<a href="#" class="btn primary">Learn More</a>
+										<a href="user-history.php" class="btn primary">View History</a>
 									</div>
 								</div>
 							</div>

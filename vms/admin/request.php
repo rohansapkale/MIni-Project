@@ -29,7 +29,10 @@ if($result){
                           <h6 class="fw-semibold mb-0">Date</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">TIme Slot</h6>
+                          <h6 class="fw-semibold mb-0">Start Time</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">End Time</h6>
                         </th>
                        <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Subject</h6>
@@ -49,10 +52,11 @@ if($result){
                             <td>".$row['appoint_with']."</td>
                             <td>".$row['request_from']."</td>
                             <td>".$row['date']."</td>
-                            <td>".$row['time_slot']."</td>
+                            <td>".$row['start_time']."</td>
+                           <td>".$row['end_time']."</td>
                             <td>".$row['subject']."</td>
                             <td><a href='confirmation.php?appointment_id=".$row['appointment_id']."' class='text-success'>Confirm</a></td>
-                            <td><a onclick='deny()' href='#'  class='text-danger'>Deny</a></td></tr>";
+                            <td><a onclick='deny()' href='deny.php?appointment_id=".$row['appointment_id']."'  class='text-danger'>Deny</a></td></tr>";
                         }
                   
                         ?>
